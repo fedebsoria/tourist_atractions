@@ -14,8 +14,8 @@ DEL_ACTION = "X"
 def locations(category):
   locations = visit.get_list_by_category(category)
   ## Check the request for form data and process
-  if False:
-    [(name, action)] = [(None, None)]
+  if request.method == "POST":
+    [(name, action)] = request.form.items()
 
     if action == UP_ACTION:
       visit.moveup(name)
