@@ -2,14 +2,14 @@
 
 <!-- begin block content here -->
 
-<h1></h1> <!-- insert category here -->
+<h1>{{ "categories[category]" }}</h1> <!-- insert category here -->
 
 <div class="navbar">
   <!-- begin for loop here -->
-
-    <a href=""></a> <!-- set attribute and text here -->
+  {% for category, label in categories.items()%}
+    <a href="{{ category }}">{{ label}}</a> <!-- set attribute and text here -->
   <!-- end for loop here -->
-
+  {% endfor %}
 </div>
 
 <table>
@@ -20,10 +20,10 @@
   </colgroup>
   <tbody class="loctable">
       <!-- begin for loop here -->
-
+      {% for location in locations %}
       <tr>
-        <td class="loc"></td> <!-- insert location name here -->
-        <td class="desc"></td> <!-- insert location description here -->
+        <td class="loc"> {{ location.name }}</td> <!-- insert location name here -->
+        <td class="desc"> {{ locations.description }}</td> <!-- insert location description here -->
         <td class="btns">
           <!-- start if statement here -->
 
@@ -36,7 +36,7 @@
         </td>
       </tr>
       <!-- end for loop here -->
-
+      {% endfor %}
   </tbody>
 </table>
 
