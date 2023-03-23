@@ -37,7 +37,8 @@ def add_location():
 
   ## Redirect to locations route function
   AddLocationForm(csrf_enabled=False)
-  return ""
+
+  return redirect(url_for("locations", category=category, _external=True, _scheme='https'))
 
 @app.route("/")
 def index():
